@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<extension version="3.9" type="plugin" group="actionlog" method="upgrade">
+<extension type="plugin" group="actionlog" method="upgrade">
 	<name>PLG_WTJOOMSHOPPING</name>
 	<author>Sergey Tolkachyov</author>
-	<creationDate>21/12/2021</creationDate>
-	<copyright>(C) Sergey Tolkachyov</copyright>
+	<creationDate>24.09.2024</creationDate>
+	<copyright>Copyright (c) 2021 - 2024 Sergey Tolkachyov. All rights reserved.</copyright>
 	<license>GNU GPL 3</license>
 	<authorEmail>info@web-tolk.ru</authorEmail>
 	<authorUrl>https://web-tolk.ru</authorUrl>
-	<version>1.0.0</version>
+	<version>2.0.0</version>
 	<description>PLG_WTJOOMSHOPPING_DESC</description>
+	<namespace path="src">Joomla\Plugin\Actionlog\Wtjoomshopping</namespace>
 	<scriptfile>script.php</scriptfile>
 	<files>
-		<filename plugin="wtjoomshopping">wtjoomshopping.php</filename>
-		<folder>language</folder>
-		<folder>fields</folder>
+		<folder plugin="wtjoomshopping">services</folder>
+		<folder>src</folder>
 	</files>
 	<languages folder="language" client="administrator">
-		<language tag="ru-RU">ru-RU.plg_actionlog_wtjoomshopping.ini</language>
-		<language tag="ru-RU">ru-RU.plg_actionlog_wtjoomshopping.sys.ini</language>
-		<language tag="en-GB">en-GB.plg_actionlog_wtjoomshopping.ini</language>
-		<language tag="en-GB">en-GB.plg_actionlog_wtjoomshopping.sys.ini</language>
+		<language tag="ru-RU">ru-RU/plg_actionlog_wtjoomshopping.ini</language>
+		<language tag="ru-RU">ru-RU/plg_actionlog_wtjoomshopping.sys.ini</language>
+		<language tag="en-GB">en-GB/plg_actionlog_wtjoomshopping.ini</language>
+		<language tag="en-GB">en-GB/plg_actionlog_wtjoomshopping.sys.ini</language>
 	</languages>
 	<config>
 		<fields>
 			<fieldset name="basic">
-				<field addfieldpath="plugins/actionlog/wtjoomshopping/fields" type="plugininfo" name="plugininfo"/>
+				<field addfieldprefix="Joomla\Plugin\Actionlog\Wtjoomshopping\Fields" type="plugininfo" name="plugininfo"/>
 			</fieldset>
 		</fields>
 	</config>
-	
 	<updateservers>
-        <server type="extension" name="WebTolk Update Server">https://web-tolk.ru/component/swjprojects/jupdate.html?element=wtjoomshopping</server>
-    </updateservers>
+		<server type="extension" priority="1" name="Action log - JoomShopping updates">https://web-tolk.ru/component/swjprojects/jupdate?element=wtjoomshopping</server>
+	</updateservers>
+	<changelogurl>https://web-tolk.ru/jchangelog?element=wtjoomshopping</changelogurl>
 </extension>
